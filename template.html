@@ -1,0 +1,37 @@
+<div ng-controller="slider_D" ww-section-edition="{{section}}" ng-init="init(section)" class="website-section">
+    <div class="slider_D">
+        <div class="background" ww-object="data.background" ww-category="background">
+        </div>
+
+
+        <div class="contents">
+
+
+
+            <div ng-if='editingSection' class="top-padding-edit"></div>
+
+            <div class="row-container container-fluid" ng-repeat="row in data.rows" ng-class="{'editing': editingSection}">
+                <div ng-if='editingSection' class='edit-button-top-left' ng-click='removeRow(row)'>
+                    <i class='fa fa-times' aria-hidden='true'></i>
+                </div>
+
+                <div ww-columns="row" ww-editing-section="editingSection"></div>
+            </div>
+
+            <div ng-if='editingSection' class="ww-add-block-container">
+                <div class="ww-add-block" ng-click="addRow()">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="slider-container-d" ww-object="data.sliderCardD" ww-object-type-allowed="['ww-image', 'ww-slider']">
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+</div>
